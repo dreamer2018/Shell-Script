@@ -7,9 +7,9 @@
 # Created Time: Tue 08 Dec 2015 06:33:03 PM CST
 
 echo "this program print your choice!"
-# read -p "Input you choice:" $input
-# case $input in
-case $1 in
+read -p "Input you choice:" input
+case $input in
+#case $1 in
     "one")
         echo "your choice is ONE"
         ;;
