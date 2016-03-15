@@ -25,6 +25,7 @@ do
             ssh root@192.168.20.1 kill -9 $pid
         done
     fi
+    exist=$( ssh root@192.168.20.1 ps aux | grep './conn' | wc -l )
     #如果网络不通或者conn.sh进程死掉了，就重新启动
     if [ $exist -lt 1 ] || [ $network -gt 0 ];then
         #重新启动conn.sh脚本
