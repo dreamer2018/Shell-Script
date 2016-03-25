@@ -1,7 +1,15 @@
+#!/bin/bash
+# File Name: iconv.sh
+# Author: ZhouPan / github:dreamer2018 
+# Mail: zhoupans_mail@163.com
+# Blog: blog.csdn.net/it_dream_er
+# Function:
+# Created Time: 2016年03月25日 星期五 16时49分17秒
 if [ $# -lt 1 ];then
     echo "Usage: iconv.sh path"
     exit
 fi
+
 line=$( ls -l $1 | sed '1d' | wc -l )
 num=-1;
 for i in $( seq 1 $line )
