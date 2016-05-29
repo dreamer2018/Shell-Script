@@ -52,8 +52,13 @@ function command()
 }
 function help()
 {
-    
+    echo "Usage:"
+    echo "      cluster_manager.sh command  向所集群所有主机发送command命令"
+    echo "      cluster_manager.sh number command 向集群number号主机发送command命令"
+    echo "      cluster_manager.sh stop 关闭集群所有主机"
+    echo "      cluster_manager.sh status 检测集群所有主机状态"
 }
+
 function test()
 {
     echo $#
@@ -68,4 +73,18 @@ function test()
 #status
 #stop
 #command $1 $2
-
+if [ "$#" == "1" ];then
+    if [ "$1" == "stop" ];then
+        stop
+    elif [ "$1" == "status" ];then
+        status
+    elif [ "$1" == "help" ];then
+        help
+    else
+        command $1
+    fi
+elif [ "$#" == "2" ];then
+    command $1 $2
+else
+    help
+fi
