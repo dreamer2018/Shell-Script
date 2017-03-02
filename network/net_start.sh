@@ -11,7 +11,7 @@ do
     #检测192.168.20.1服务器上的./connect.sh进程是否还活着，活着则返回>1
     exist=$( ssh root@192.168.20.1 ps aux | grep './conn' | wc -l )
     #检测网络是否通着
-    ping -W 2 -c 1 180.97.33.108 > /dev/null
+    ping -W 2 -c 1 www.baidu.com > /dev/null
     #如果网络是通着的话，network值就为0
     network=$?
     #允许同时运行一到三个conn.sh进程，如果大于三个则将其余的杀掉
